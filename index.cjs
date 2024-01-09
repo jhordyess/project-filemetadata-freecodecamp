@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
 
+const port = process.env.PORT || 3000
+
 const app = express()
 
 app.use(cors())
@@ -11,7 +13,6 @@ app.get('/', (_, res) => {
   res.sendFile(process.cwd() + '/views/index.html')
 })
 
-const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log('Your app is listening on port ' + port)
 })
